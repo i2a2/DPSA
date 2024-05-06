@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hwlink:HwLinkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwlink="http://www.xilinx.com/acceleration/hwlink" name="DPSA_system_hw_link" platform="/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm" systemProject="DPSA_system" cpu="pl">
+  <configuration name="Emulation-SW" id="com.xilinx.ide.accel.config.hwlink.sw_emu.1314490323">
+    <configBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1">
+        <kernels name="krnl_JESD204B_rx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_rx_1" slr="">
+            <args name="inStream"/>
+            <args name="outStream_ln0"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_JESD204B_tx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_tx_1" slr="">
+            <args name="outStream"/>
+            <args name="in" master="true" memory=""/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_dpsa" projectName="DPSA_kernels">
+          <computeUnits name="krnl_dpsa_1" slr="">
+            <args name="ln0"/>
+            <args name="baseline" master="true" memory=""/>
+            <args name="h" master="true" memory=""/>
+            <args name="factor"/>
+            <args name="threshold"/>
+            <args name="result" master="true" memory=""/>
+            <args name="scale"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hwlink.hw_emu.763056388">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1">
+        <kernels name="krnl_JESD204B_rx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_rx_1" slr="">
+            <args name="inStream"/>
+            <args name="outStream_ln0"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_JESD204B_tx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_tx_1" slr="">
+            <args name="outStream"/>
+            <args name="in" master="true" memory=""/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_dpsa" projectName="DPSA_kernels">
+          <computeUnits name="krnl_dpsa_1" slr="">
+            <args name="ln0"/>
+            <args name="baseline" master="true" memory=""/>
+            <args name="h" master="true" memory=""/>
+            <args name="factor"/>
+            <args name="threshold"/>
+            <args name="result" master="true" memory=""/>
+            <args name="scale"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwlink.hw.966347211">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1">
+        <kernels name="krnl_JESD204B_rx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_rx_1" slr="">
+            <args name="inStream"/>
+            <args name="outStream_ln0"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_JESD204B_tx" projectName="DPSA_kernels">
+          <computeUnits name="krnl_JESD204B_tx_1" slr="">
+            <args name="outStream"/>
+            <args name="in" master="true" memory=""/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+        <kernels name="krnl_dpsa" projectName="DPSA_kernels">
+          <computeUnits name="krnl_dpsa_1" slr="">
+            <args name="ln0"/>
+            <args name="baseline" master="true" memory=""/>
+            <args name="h" master="true" memory=""/>
+            <args name="factor"/>
+            <args name="threshold"/>
+            <args name="result" master="true" memory=""/>
+            <args name="scale"/>
+            <args name="size"/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+  </configuration>
+</hwlink:HwLinkProject>

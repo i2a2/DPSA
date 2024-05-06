@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hwkernel:HwKernelProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwkernel="http://www.xilinx.com/acceleration/hwkernel" name="DPSA_kernels" platform="/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm" platformUID="i2a2:namc_zynqup_fmc:namc_zynqup_fmc:1.0" systemProject="DPSA_system" cpu="">
+  <configuration name="Emulation-SW" id="com.xilinx.ide.accel.config.hwkernel.sw_emu.238478156" dirty="true">
+    <configBuildOptions xsi:type="hwkernel:KernelOptions" kernelDebug="true">
+      <kernels name="krnl_JESD204B_rx" sourceFile="src/krnl_JESD204B_rx.cpp" maxMemoryPorts="true">
+        <args name="inStream"/>
+        <args name="outStream_ln0"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_JESD204B_tx" sourceFile="src/krnl_JESD204B_tx.cpp" maxMemoryPorts="true">
+        <args name="outStream"/>
+        <args name="in" master="true"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
+        <args name="ln0"/>
+        <args name="baseline" master="true"/>
+        <args name="h" master="true"/>
+        <args name="factor"/>
+        <args name="threshold"/>
+        <args name="result" master="true"/>
+        <args name="scale"/>
+        <args name="size"/>
+      </kernels>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hwkernel.hw_emu.767853934" dirty="true">
+    <configBuildOptions xsi:type="hwkernel:KernelOptions" kernelDebug="true" target="hw_emu">
+      <kernels name="krnl_JESD204B_rx" sourceFile="src/krnl_JESD204B_rx.cpp" maxMemoryPorts="true">
+        <args name="inStream"/>
+        <args name="outStream_ln0"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_JESD204B_tx" sourceFile="src/krnl_JESD204B_tx.cpp" maxMemoryPorts="true">
+        <args name="outStream"/>
+        <args name="in" master="true"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
+        <args name="ln0"/>
+        <args name="baseline" master="true"/>
+        <args name="h" master="true"/>
+        <args name="factor"/>
+        <args name="threshold"/>
+        <args name="result" master="true"/>
+        <args name="scale"/>
+        <args name="size"/>
+      </kernels>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwkernel.hw.1012075815" dirty="true">
+    <configBuildOptions xsi:type="hwkernel:KernelOptions" target="hw">
+      <kernels name="krnl_JESD204B_rx" sourceFile="src/krnl_JESD204B_rx.cpp" maxMemoryPorts="true">
+        <args name="inStream"/>
+        <args name="outStream_ln0"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_JESD204B_tx" sourceFile="src/krnl_JESD204B_tx.cpp" maxMemoryPorts="true">
+        <args name="outStream"/>
+        <args name="in" master="true"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
+        <args name="ln0"/>
+        <args name="baseline" master="true"/>
+        <args name="h" master="true"/>
+        <args name="factor"/>
+        <args name="threshold"/>
+        <args name="result" master="true"/>
+        <args name="scale"/>
+        <args name="size"/>
+      </kernels>
+    </configBuildOptions>
+  </configuration>
+</hwkernel:HwKernelProject>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemproject="http://www.xilinx.com/systemproject" name="DPSA_system" platform="/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm" platformUID="i2a2:namc_zynqup_fmc:namc_zynqup_fmc:1.0" sysConfig="namc_zynqup_jesd204_fmc" rootFSLocation="/opt/xilinx/platforms/namc_zup_125M_new/sw/namc_zynqup_jesd204_fmc/xrt/filesystem/rootfs.ext4" linuxImage="/opt/xilinx/platforms/namc_zup_125M_new/sw/namc_zynqup_jesd204_fmc/xrt/image/Image" sysroot="/opt/xilinx/platforms/namc_zup_125M_new/sysroot/sysroots/cortexa72-cortexa53-xilinx-linux">
+  <configuration name="Emulation-SW" id="com.xilinx.sdx.system.managedbuilder.swemu.configuration.1473802626">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="DPSA_system_hw_link" domainName="" domainPrettyName="pl" appBuildConfig="Emulation-SW"/>
+      <applications name="DPSA_kernels" domainName="" domainPrettyName="pl" appBuildConfig="Emulation-SW"/>
+      <applications name="DPSA" domainName="xrt" domainPrettyName="xrt" appBuildConfig="Emulation-SW"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.sdx.system.managedbuilder.hwemu.configuration.33329892">
+    <configBuildOptions xsi:type="systemproject:SystemOptions" target="hw_emu">
+      <applications name="DPSA_system_hw_link" domainName="" domainPrettyName="pl" appBuildConfig="Emulation-HW"/>
+      <applications name="DPSA_kernels" domainName="" domainPrettyName="pl" appBuildConfig="Emulation-HW"/>
+      <applications name="DPSA" domainName="xrt" domainPrettyName="xrt" appBuildConfig="Emulation-HW"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.sdx.system.managedbuilder.hw.configuration.1049746671">
+    <configBuildOptions xsi:type="systemproject:SystemOptions" target="hw">
+      <applications name="DPSA_system_hw_link" domainName="" domainPrettyName="pl" appBuildConfig="Hardware"/>
+      <applications name="DPSA_kernels" domainName="" domainPrettyName="pl" appBuildConfig="Hardware"/>
+      <applications name="DPSA" domainName="xrt" domainPrettyName="xrt" appBuildConfig="Hardware"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

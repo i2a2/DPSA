@@ -1,0 +1,37 @@
+{
+  "version": "2021.1",
+  "applications": [],
+  "platforms": [],
+  "systems": [
+    {
+      "name": "DPSA_system",
+      "platform": "/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm",
+      "sysConfig": "namc_zynqup_jesd204_fmc",
+      "buildConfig": "Emulation-SW",
+      "applications": [
+        {
+          "name": "DPSA_system_hw_link",
+          "platform": "/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm",
+          "sysConfig": "Linux on x86",
+          "domain": "pl",
+          "system": "DPSA_system"
+        },
+        {
+          "name": "DPSA_kernels",
+          "platform": "/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm",
+          "sysConfig": "Linux on x86",
+          "domain": "",
+          "system": "DPSA_system"
+        },
+        {
+          "name": "DPSA",
+          "platform": "/opt/xilinx/platforms/namc_zup_125M_new/namc_zynqup_jesd204_fmc.xpfm",
+          "sysConfig": "namc_zynqup_jesd204_fmc",
+          "domain": "xrt",
+          "system": "DPSA_system"
+        }
+      ]
+    }
+  ],
+  "others": []
+}
