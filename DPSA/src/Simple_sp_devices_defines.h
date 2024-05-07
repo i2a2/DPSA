@@ -1,3 +1,8 @@
+/*
+ * Hardware Acceleration of Digital Pulse Shape Analysis Using FPGAs © 2024 by César González, Mariano Ruiz, Antonio Carpeño, Alejandro Piñas, Daniel Cano-Ott, Julio Plaza, Trino Martinez and David Villamarin is licensed under Creative Commons Attribution 4.0 International.
+ * To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+ */
+
 #ifndef SP_CARD_COMMON_DEFINES_H
 #define SP_CARD_COMMON_DEFINES_H
 

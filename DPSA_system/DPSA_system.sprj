@@ -20,5 +20,10 @@
       <applications name="DPSA_kernels" domainName="" domainPrettyName="pl" appBuildConfig="Hardware"/>
       <applications name="DPSA" domainName="xrt" domainPrettyName="xrt" appBuildConfig="Hardware"/>
     </configBuildOptions>
+    <lastBuildOptions xsi:type="systemproject:SystemOptions" target="hw">
+      <applications name="DPSA_system_hw_link" domainName="" domainPrettyName="pl" appBuildConfig="Hardware"/>
+      <applications name="DPSA_kernels" domainName="" domainPrettyName="pl" appBuildConfig="Hardware"/>
+      <applications name="DPSA" domainName="xrt" domainPrettyName="xrt" appBuildConfig="Hardware"/>
+    </lastBuildOptions>
   </configuration>
 </systemproject:SystemProject>

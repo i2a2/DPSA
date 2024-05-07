@@ -23,22 +23,21 @@ enum reader_response
 class Reader
 {
 public:
-    Reader();
+    Reader(std::string &filename);
     virtual ~Reader();
 
-    reader_response ReadCardHeader(std::string filename,
-		    SP_Devices_DataBlock_Information &card_header);
+    reader_response ReadCardHeader(SP_Devices_DataBlock_Information &card_header);
 
-    reader_response ReadRecordHeader(std::string filename,
-				    uint32_t &nsamples, uint32_t &index,
-				    unsigned long int card_header_size,
-				    unsigned long int record_header_size,
+    reader_response ReadRecordHeader(uint32_t &nsamples, uint32_t &index,
+				    unsigned long int &card_header_size,
+				    unsigned long int &record_header_size,
 				    SP_Devices_Monster_Data_Header &record_header);
 
-    static reader_response ReadWaveform(std::string filename,
-		    uint32_t &index,std::vector<int16_t> &signal, uint32_t &nsamples,
-		    unsigned long int card_header_size, unsigned long int record_header_size);
-
+    reader_response ReadWaveform(uint32_t &index,std::vector<int16_t> &signal,
+    									uint32_t &nsamples,	unsigned long int &card_header_size,
+										unsigned long int &record_header_size);
+private:
+    std::ifstream file;
 };
 
 #endif /* READER_H_ */
