@@ -13,6 +13,8 @@ The system is based on a Micro Telecommunications Computing Architecture (MicroT
 
 ## Software Requirements
 
+Vitis Integrated Design Enviroment v2021.1.0 (64-bit) 
+
 ## Usage
 
 ### JESD204B Board Support Package
@@ -21,4 +23,38 @@ The JESD204B standard is implemented in the SoC programmable logic (PL) area to 
 
 Please, refer to https://github.com/i2a2/namc_zynqup_fmc_bsp/tree/ad_jesd204_2021.1
 
+### DPSA
 
+1. Clone repository:
+
+````
+  git clone git@github.com:i2a2/DPSA.git
+````
+
+2. Import the project:  
+
+* File => Import => Import projects from Git => Existing local repository => DPSA
+* Import existing Eclipse projects
+* Select all and import
+
+3. Make sure you have configured the project's Sysroot, Root FS, and Kernel Image options correctly (Please, refer to https://github.com/i2a2/namc_zynqup_fmc_bsp/tree/ad_jesd204_2021.1).
+
+4. Edit the binary container settings to add the following lines to the V++ configuration:
+
+````
+[connectivity]
+sc=krnl_JESD204B_tx_1.outStream:krnl_JESD204B_rx_1.inStream
+sc=krnl_JESD204B_rx_1.outStream_ln0:krnl_dpsa_1.ln0
+````
+
+5. Build Project using Hardware configuration. This step takes about an hour.
+
+6. The image should be burned into an SD card.
+````
+cd <WORKING_DIRECTORY_PATH>/DPSA_system/Hardware/package/sd_card/
+sudo dd if=Image of=/dev/<SD_CARD_DEVICE_FILE_DESCRIPTOR>
+````
+7. Boot the NAMC-ZYNQ-FMC card. To store the BC501A liquid scintillator signals file, it is necessary to expand the Root File System. The ROOT_FS_PARTITION is typically represented by the mmcblkXpY designation.
+````
+resize-part /dev/<ROOT_FS_PARTITION>
+````
