@@ -5,22 +5,18 @@
 
 #include "reader.h"
 
-
-Reader::Reader() {
+Reader::Reader(std::string &filename) : file(filename, std::ios::binary) {
+	if (!file.is_open()){
+			std::cout<< "File not open"<<std::endl;
+		}
 }
 
 Reader::~Reader() {
 }
 
-
-reader_response Reader::ReadCardHeader(std::string filename,
-		SP_Devices_DataBlock_Information &card_header)
+reader_response Reader::ReadCardHeader( SP_Devices_DataBlock_Information &card_header)
 {
-	std::ifstream file(filename, std::ios::binary);
 
-	if (!file.is_open()){
-		std::cout<< "File not open"<<std::endl;
-	}
 	if (file.fail()){
 		std::cout<<"File open fail"<<std::endl;
 		return ERROR;
@@ -30,17 +26,13 @@ reader_response Reader::ReadCardHeader(std::string filename,
 	return NO_ERROR;
 }
 
-reader_response Reader::ReadRecordHeader(std::string filename,
+reader_response Reader::ReadRecordHeader(
 		uint32_t &nsamples, uint32_t &index,
-		unsigned long int card_header_size,
-		unsigned long int record_header_size,
+		unsigned long int &card_header_size,
+		unsigned long int &record_header_size,
 		SP_Devices_Monster_Data_Header &record_header)
 {
-	std::ifstream file(filename, std::ios::binary);
 
-	if (!file.is_open()){
-		std::cout<< "File not open"<<std::endl;
-	}
 	if (file.fail()){
 		std::cout<<"File open fail"<<std::endl;
 		return ERROR;
@@ -54,19 +46,14 @@ reader_response Reader::ReadRecordHeader(std::string filename,
 	return NO_ERROR;
 }
 
-reader_response Reader::ReadWaveform(std::string filename,
+reader_response Reader::ReadWaveform(
 			uint32_t &index,std::vector<int16_t> &signal,
-			uint32_t &nsamples, unsigned long int card_header_size,
-			unsigned long int record_header_size)
+			uint32_t &nsamples, unsigned long int &card_header_size,
+			unsigned long int &record_header_size)
 {
-	std::ifstream file(filename, std::ios::binary);
 
 	int16_t *waveform = new int16_t[nsamples];
 
-	if (!file.is_open()){
-		std::cout<< "File not open"<<std::endl;
-		return ERROR;
-	}
 	if (file.fail()){
 		std::cout<<"File open fail"<<std::endl;
 		return ERROR;
@@ -80,7 +67,7 @@ reader_response Reader::ReadWaveform(std::string filename,
 	signal.assign(waveform, waveform+nsamples);
 	index++;
 
-	delete [] waveform;
+	delete[] waveform;
 	waveform = NULL;
 
 	if(file.eof())
@@ -89,5 +76,7 @@ reader_response Reader::ReadWaveform(std::string filename,
 		file.close();
 		return END_FILE;
 	}
+//	file.close();
+
 	return NO_ERROR;
 }

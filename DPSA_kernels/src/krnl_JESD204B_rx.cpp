@@ -17,11 +17,11 @@ const int c_size = DATA_SIZE;
 extern "C" {
 	void krnl_JESD204B_rx(
 			hls::stream<uint128_t> &inStream,
-			hls::stream<ap_axiu<16, 0, 0, 0> > &outStream_ln0,
-			int size
+			hls::stream<ap_axis<16, 0, 0, 0> > &outStream_ln0,
+			short size
 			){
 
-#pragma HLS INTERFACE axis port=inStream depth=512
+#pragma HLS INTERFACE axis port=inStream depth=2048
 #pragma HLS dataflow
 
 		for (int i = 0; i < size; i++){
@@ -30,14 +30,14 @@ extern "C" {
 
 			uint128_t v = inStream.read();
 
-			ap_axiu<16, 0, 0, 0> v_0_ln0;
-			ap_axiu<16, 0, 0, 0> v_1_ln0;
-			ap_axiu<16, 0, 0, 0> v_2_ln0;
-			ap_axiu<16, 0, 0, 0> v_3_ln0;
-			ap_axiu<16, 0, 0, 0> v_4_ln0;
-			ap_axiu<16, 0, 0, 0> v_5_ln0;
-			ap_axiu<16, 0, 0, 0> v_6_ln0;
-			ap_axiu<16, 0, 0, 0> v_7_ln0;
+			ap_axis<16, 0, 0, 0> v_0_ln0;
+			ap_axis<16, 0, 0, 0> v_1_ln0;
+			ap_axis<16, 0, 0, 0> v_2_ln0;
+			ap_axis<16, 0, 0, 0> v_3_ln0;
+			ap_axis<16, 0, 0, 0> v_4_ln0;
+			ap_axis<16, 0, 0, 0> v_5_ln0;
+			ap_axis<16, 0, 0, 0> v_6_ln0;
+			ap_axis<16, 0, 0, 0> v_7_ln0;
 
 			v_0_ln0.data = v.range(15,0);
 			v_1_ln0.data = v.range(31,16);

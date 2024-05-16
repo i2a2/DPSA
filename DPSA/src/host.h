@@ -10,6 +10,17 @@
 #define CL_HPP_MINIMUM_OPENCL_VERSION 120
 #define CL_HPP_ENABLE_PROGRAM_CONSTRUCTION_FROM_ARRAY_COMPATIBILITY 1
 
+#define PILEUP 0
+#define SATURED 1
+#define NPEAKS 2
+#define BASELINE 3
+#define STDBASELINE 4
+#define PTIME 5
+#define MAX 6
+#define EN 7
+#define EN1 8
+#define EN2 9
+
 #include <CL/cl2.hpp>
 
 // Customized buffer allocation for 4K boundary alignment
@@ -23,3 +34,4 @@ struct aligned_allocator {
     }
     void deallocate(T* p, std::size_t num) { free(p); }
 };
+

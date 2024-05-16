@@ -6,7 +6,8 @@
   <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hw_emu.aarch64.1652579333" dirty="true">
     <configBuildOptions xsi:type="hostApp:HostApplicationOptions" target="hw_emu"/>
   </configuration>
-  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hw.aarch64.544777096" dirty="true">
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hw.aarch64.544777096">
     <configBuildOptions xsi:type="hostApp:HostApplicationOptions" target="hw"/>
+    <lastBuildOptions xsi:type="hostApp:HostApplicationOptions" target="hw"/>
   </configuration>
 </hostApp:AcceleratedHostProject>

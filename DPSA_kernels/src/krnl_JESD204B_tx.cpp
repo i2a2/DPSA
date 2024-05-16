@@ -15,17 +15,15 @@ Description:
 typedef ap_uint<128> uint128_t;
 
 #define DATA_SIZE 375
-#define MAX_SAMPLES 512
 
 // TRIPCOUNT identifier
-const int c_size = MAX_SAMPLES;
-const int m_size = DATA_SIZE;
+const int c_size = DATA_SIZE;
 
 extern "C" {
 	void krnl_JESD204B_tx(
 			hls::stream<uint128_t> &outStream,
 			uint128_t * in,
-			int size
+			short size
 			){
 
 #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem0
@@ -33,7 +31,7 @@ extern "C" {
 
 		/*Write to AXIS*/
 		for(int i = 0; i < size; i++){
-#pragma HLS LOOP_TRIPCOUNT min = m_size max = c_size
+#pragma HLS LOOP_TRIPCOUNT min = c_size max = c_size
 			outStream << in[i];
 		}
 	}

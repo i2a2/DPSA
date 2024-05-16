@@ -14,7 +14,7 @@
       </kernels>
       <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
         <args name="ln0"/>
-        <args name="baseline" master="true"/>
+        <args name="waveform_args" master="true"/>
         <args name="h" master="true"/>
         <args name="factor"/>
         <args name="threshold"/>
@@ -38,7 +38,7 @@
       </kernels>
       <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
         <args name="ln0"/>
-        <args name="baseline" master="true"/>
+        <args name="waveform_args" master="true"/>
         <args name="h" master="true"/>
         <args name="factor"/>
         <args name="threshold"/>
@@ -48,7 +48,7 @@
       </kernels>
     </configBuildOptions>
   </configuration>
-  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwkernel.hw.1012075815" dirty="true">
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwkernel.hw.1012075815">
     <configBuildOptions xsi:type="hwkernel:KernelOptions" target="hw">
       <kernels name="krnl_JESD204B_rx" sourceFile="src/krnl_JESD204B_rx.cpp" maxMemoryPorts="true">
         <args name="inStream"/>
@@ -62,7 +62,7 @@
       </kernels>
       <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
         <args name="ln0"/>
-        <args name="baseline" master="true"/>
+        <args name="waveform_args" master="true"/>
         <args name="h" master="true"/>
         <args name="factor"/>
         <args name="threshold"/>
@@ -71,5 +71,27 @@
         <args name="size"/>
       </kernels>
     </configBuildOptions>
+    <lastBuildOptions xsi:type="hwkernel:KernelOptions" target="hw">
+      <kernels name="krnl_JESD204B_rx" sourceFile="src/krnl_JESD204B_rx.cpp" maxMemoryPorts="true">
+        <args name="inStream"/>
+        <args name="outStream_ln0"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_JESD204B_tx" sourceFile="src/krnl_JESD204B_tx.cpp" maxMemoryPorts="true">
+        <args name="outStream"/>
+        <args name="in" master="true"/>
+        <args name="size"/>
+      </kernels>
+      <kernels name="krnl_dpsa" sourceFile="src/krnl_dpsa.cpp" maxMemoryPorts="true">
+        <args name="ln0"/>
+        <args name="waveform_args" master="true"/>
+        <args name="h" master="true"/>
+        <args name="factor"/>
+        <args name="threshold"/>
+        <args name="result" master="true"/>
+        <args name="scale"/>
+        <args name="size"/>
+      </kernels>
+    </lastBuildOptions>
   </configuration>
 </hwkernel:HwKernelProject>
